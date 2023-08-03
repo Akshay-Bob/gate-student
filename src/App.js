@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Banner from './Components/Banner'
+import ProgramDetails from './Components/ProgramDetails'
+import { Container, Row, Col } from 'react-bootstrap'
+import ContactForm from './Components/ContactForm'
+import ContactContent from './Components/ContactContent';
+import PopupCopm from './Components/PopupCopm'
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <div>
+      <Banner />
+      <ProgramDetails />
+      <PopupCopm/>
 
-export default App;
+      <Container fluid  className='bg-light py-5'>
+        <Container>
+          <Row>
+            <Col><ContactContent/></Col>
+            <Col><ContactForm /></Col>
+          </Row>
+        </Container>
+      </Container>
+    </div>
+  )
+}
