@@ -50,7 +50,7 @@ export default function ContactForm() {
     configureCaptcha(phoneNumber);
 
     const appVerifier = window.recaptchaVerifier;
-    const auth = getAuth(firebase);
+    const auth = getAuth();
 
     signInWithPhoneNumber(auth, phoneNumber, appVerifier).then((confirmationResult) => {
         // SMS sent. Prompt user to type the code from the message, then sign the
