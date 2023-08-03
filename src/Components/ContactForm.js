@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import app from '../firebase'
+//import firebase from './firebase.config';
 import { getAuth, RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 
 export default function ContactForm() {
@@ -24,7 +26,7 @@ export default function ContactForm() {
 
   // configureCaptcha
   const configureCaptcha = (number) => {
-    const auth = getAuth();
+    const auth = getAuth(app);
     window.recaptchaVerifier = new RecaptchaVerifier(auth, 'sign-in-button', {
       'size': 'invisible',
       'callback': (response) => {
@@ -42,15 +44,15 @@ export default function ContactForm() {
   const onSignInSubmit = (event) => {
     event.preventDefault();
 
-    configureCaptcha();
     const phoneNumber = "+91" + state.number;
     console.log(phoneNumber);
+    
+    configureCaptcha(phoneNumber);
 
     const appVerifier = window.recaptchaVerifier;
     const auth = getAuth();
 
-    signInWithPhoneNumber(auth, phoneNumber, appVerifier)
-      .then((confirmationResult) => {
+    signInWithPhoneNumber(auth, phoneNumber, appVerifier).then((confirmationResult) => {
         // SMS sent. Prompt user to type the code from the message, then sign the
         // user in with confirmationResult.confirm(code).
         window.confirmationResult = confirmationResult;
@@ -65,22 +67,22 @@ export default function ContactForm() {
       });
   }
 
-  
+
   const verifyOtp = (event) => {
     event.preventDefault();
 
     const code = state.otp;
     window.confirmationResult.confirm(code).then((result) => {
       // User signed in successfully.
-      const user = result.user;
+      //const user = result.user;
       postData();
-      //console.log(JSON.stringify(user));
-      console.log('user is verified');
+     
+      alert('user is verified');
       // ...
     }).catch((error) => {
       // User couldn't sign in (bad verification code?)
       // ...
-      console.log('user is not verified');
+      alert('user is not verified');
     });
   };
 
@@ -125,7 +127,7 @@ export default function ContactForm() {
           });
 
 
-          alert("Thank You");
+          alert("Data stored successfully");
         }
         else {
           alert("Error storing data. Please try again.");
