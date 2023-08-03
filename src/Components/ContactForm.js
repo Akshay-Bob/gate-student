@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { getAuth, RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
-import firebase from './firebase.config';
 
 export default function ContactForm() {
 
