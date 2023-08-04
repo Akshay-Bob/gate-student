@@ -3,6 +3,8 @@ import data from './ProgramData'
 import { Container, Row, Card, Image } from 'react-bootstrap'
 
 function cardList(val) {
+
+  //const {title, cardImage, description} = 
   return (
     <Card className='col-md-4 border-0 py-3'>
       <Card.Body className='text-center border border-1 rounded-4 p-4'>

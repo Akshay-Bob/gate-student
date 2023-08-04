@@ -6,6 +6,7 @@ import 'firebase/database';
 const firebaseConfig = {
   apiKey: "AIzaSyCXCfnxPhuMPflijNR81DZspnbgCpC4OFw",
   authDomain: "gate-students.firebaseapp.com",
+  databaseURL: "https://gate-students-1b507-default-rtdb.firebaseio.com",
   projectId: "gate-students",
   storageBucket: "gate-students.appspot.com",
   messagingSenderId: "246033063858",

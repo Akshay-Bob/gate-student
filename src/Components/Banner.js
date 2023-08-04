@@ -10,7 +10,7 @@ export default function Banner() {
       <Container fluid>
         <Row>
           <Col className='px-0'>
-            <Image src={banner} className='img-fluid' style={{ 'filter': 'brightness(0.5)' }} />
+            <Image src={banner} className='img-fluid' style={{ 'filter': 'brightness(0.2)' }} />
 
             <h1 className='position-absolute  top-0 mt-5 fs-1 text-white ps-5 ms-5 w-50 fw-bold lh-base'>Unlock your potential. <br />Ace the GATE 2025 with Vidyalankar
               Infinite.</h1>

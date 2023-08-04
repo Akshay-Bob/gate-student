@@ -91,7 +91,7 @@ export default function PopupCopm() {
               <p>GATE infinite brings you a program that offers Flexibility, quality teaching & access to top-notch resources.</p>
             </Col>
             <Col xs={2}><Button variant="outline-warning" onClick={handleShow}>Talk to counsellor</Button></Col>
-            <Modal show={show} onHide={handleClose}>
+            <Modal show={show} onHide={handleClose} style={{top: '20%'}}>
               <Modal.Header closeButton>
                 <Modal.Title>Enquiry Form</Modal.Title>
               </Modal.Header>
