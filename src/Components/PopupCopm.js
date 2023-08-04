@@ -35,10 +35,12 @@ export default function PopupCopm() {
     if (fname && femail && fnumber && fprogram ) {
       if (fnumber.length === 10 && /^\d+$/.test(fnumber)) {
         
-        const request = await fetch(
-          "https://gate-students-1b507-default-rtdb.firebaseio.com/gateStudentEnquiryData.json",
+        const request = await fetch("https://gate-students-1b507-default-rtdb.firebaseio.com/gateStudentEnquiryData.json",
           {
             method: "POST",
+            mode: 'no-cors',
+            cache: 'no-cache',
+            credentials: 'same-origin',
             headers: {
               "Content-Type": 'application/json',
             },
