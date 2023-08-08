@@ -35,7 +35,7 @@ export default function ContactForm() {
         // reCAPTCHA solved, allow signInWithPhoneNumber.
         onSignInSubmit();
 
-        console.log(number, 'recaptha verified');
+        console.log(number, 'recaptha verify');
       }
     });
   }
