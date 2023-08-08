@@ -27,7 +27,7 @@ export default function App() {
         <Row>
           <Col>
             <Slider/>
-            <Netflix/>
+            {/* <Netflix/> */}
           </Col>
         </Row>
       </Container>
