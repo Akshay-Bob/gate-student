@@ -5,6 +5,8 @@ import { Container, Row, Col } from 'react-bootstrap'
 import ContactForm from './Components/ContactForm'
 import ContactContent from './Components/ContactContent';
 import PopupCopm from './Components/PopupCopm'
+import Slider from './Components/Slider'
+import Netflix from './Components/Netflix'
 
 export default function App() {
   return (
@@ -20,6 +22,14 @@ export default function App() {
             <Col><ContactForm /></Col>
           </Row>
         </Container>
+      </Container>
+      <Container>
+        <Row>
+          <Col>
+            <Slider/>
+            <Netflix/>
+          </Col>
+        </Row>
       </Container>
     </div>
   )
