@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-//import app from '../firebase'
-import firebase from './firebase.config';
+//import appCon from '../firebase'
+import firebaseCon from './firebase.config';
 import { getAuth, RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 
 export default function ContactForm() {
@@ -26,8 +26,8 @@ export default function ContactForm() {
 
   // configureCaptcha
   const configureCaptcha = (number) => {
-    //const auth = getAuth(firebase);
-    const auth = getAuth(firebase);
+    //const auth = getAuth(app);
+    const auth = getAuth(firebaseCon);
 
     window.recaptchaVerifier = new RecaptchaVerifier(auth, 'sign-in-button', {
       'size': 'invisible',
