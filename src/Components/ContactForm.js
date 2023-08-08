@@ -91,8 +91,8 @@ export default function ContactForm() {
 
 
 
-  const postData = async (event) => {
-     event.preventDefault();
+  const postData = async () => {
+    //  event.preventDefault();
 
     const { name, email, number, branch, year, otp } = state;
 
